@@ -18,4 +18,16 @@ $(document).ready(function() {
     });
   });
 
+  $('#tweetButton').on('click', function() {
+
+      var textToTweet = $('#quote').text() + $('#author').text();
+      console.log(textToTweet.length);
+      if (textToTweet.length > 140) {
+
+      } else {
+        $('#tweetButton').attr('href', 'https://twitter.com/intent/tweet?text=' + textToTweet + '');
+      }
+
+  });
+
 });
