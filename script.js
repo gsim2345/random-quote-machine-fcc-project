@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+
+
   // getting the first quote with getJSON
   $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
     var quoteText = data.quoteText;
@@ -10,6 +12,7 @@ $(document).ready(function() {
 
   // getting a new quote on click
   $('#newQuoteButton').on('click', function() {
+    $('.alert').addClass('hidden');
     //$('#quote').text("");
     //$('#author').text("");
     $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
@@ -27,9 +30,10 @@ $(document).ready(function() {
       // if tweet is longer than 140 chars, alert sent with materialize toast component.
       if (textToTweet.length > 140) {
         event.preventDefault();
-        Materialize.toast('Your tweet is longer than 140 characters !', 6000);
+        //Materialize.toast('Your tweet is longer than 140 characters !', 6000);
+        $('.alert').removeClass('hidden').html('Your tweet is longer than 140 characters !');
       } else {
-      // if it's < 140 chars, tweeting out.  
+      // if it's < 140 chars, tweeting out.
         $('#tweetButton').attr('href', 'https://twitter.com/intent/tweet?text=' + textToTweet + '');
       }
 
