@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Random Quote Machine</title>
     <!-- Materialize - Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">-->
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <!-- link to CSS file -->
@@ -17,27 +17,48 @@
   <body>
     <div class="container">
 
+      <div class="quoteDislay" align="center">
+        <p id="quote"></p>
+        <div>
+          <p id="author"></p>
+        </div>
+        <div class="buttons">
+          <button><a id="tweetButton" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Tweet</a></button>
+          <button id="newQuoteButton" type="button">New Quote</button>
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+      <!--
       <div class="row row-w-top-padding">
      <div class="col s2"></div>
-     <div class="col s8">
+     <div class="col s8"> -->
        <!--materialize card component for quotes -->
-           <div class="card large z-depth-3">
+      <!--     <div class="card large z-depth-3"> -->
              <!--text part -->
-             <div class="card-content">
+             <!--<div class="card-content">
                <p id="quote"></p>
                <p id="author" class="right-align"></p>
-             </div>
+             </div> -->
              <!-- button part-->
-             <div class="card-action">
+             <!--<div class="card-action"> -->
                <!-- twitter button-->
-               <a class="waves-effect waves-light btn twitter-share-button" href="https://twitter.com/intent/tweet" target="_blank" id="tweetButton">Tweet</a>
+               <!--<a class="waves-effect waves-light btn twitter-share-button" href="https://twitter.com/intent/tweet" target="_blank" id="tweetButton">Tweet</a>-->
                <!-- New Quote button-->
-               <a class="waves-effect waves-light btn" id="newQuoteButton">New Quote</a>
+               <!--<a class="waves-effect waves-light btn" id="newQuoteButton">New Quote</a>
              </div>
            </div>
      </div>
      <div class="col s2"></div>
-   </div>
+   </div>-->
 
 
 
@@ -63,7 +84,7 @@
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Materialize - Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>-->
     <!-- Fontawesome -->
     <script src="https://use.fontawesome.com/31e4b5bbb7.js"></script>
     <!-- link to js file -->
