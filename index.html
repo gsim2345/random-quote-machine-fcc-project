@@ -8,45 +8,53 @@
     <title>Random Quote Machine</title>
     <!-- Materialize - Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <!-- link to CSS file -->
     <link href="style.css" rel="stylesheet" type="text/css"/>
 
   </head>
   <body>
     <div class="container">
-      
 
-      <!--materialize card component for quotes -->
-      <div class="card small z-depth-3">
-        <!--text part -->
-        <div class="card-content">
-          <p id="quote"></p>
-          <p id="author"><em></em></p>
-        </div>
-        <!-- button part-->
-        <div class="card-action">
-          <div class="row">
-            <div class="col s3 center-align">
-              <!-- twitter button-->
-              <a class="waves-effect waves-light btn twitter-share-button" href="https://twitter.com/intent/tweet" target="_blank" id="tweetButton">Tweet</a>
-            </div>
-            <div class="col s6">
-              <p></p>
-            </div>
-            <div class="col s3 center-align">
-              <!-- New Quote button-->
-              <a class="waves-effect waves-light btn" id="newQuoteButton">New Quote</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="row row-w-top-padding">
+     <div class="col s2"></div>
+     <div class="col s8">
+       <!--materialize card component for quotes -->
+           <div class="card large z-depth-3">
+             <!--text part -->
+             <div class="card-content">
+               <p id="quote"></p>
+               <p id="author" class="right-align"></p>
+             </div>
+             <!-- button part-->
+             <div class="card-action">
+               <!-- twitter button-->
+               <a class="waves-effect waves-light btn twitter-share-button" href="https://twitter.com/intent/tweet" target="_blank" id="tweetButton">Tweet</a>
+               <!-- New Quote button-->
+               <a class="waves-effect waves-light btn" id="newQuoteButton">New Quote</a>
+             </div>
+           </div>
+     </div>
+     <div class="col s2"></div>
+   </div>
 
 
-      <div class="card-panel #ef5350 red lighten-1 alert hidden"></div>
+
+
+
+    <div class="card-panel #ef5350 red lighten-1 alert hidden"></div>
 
 
 
     </div>
+
+
+
+
+
+
+
 
 
 
