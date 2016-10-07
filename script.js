@@ -1,37 +1,19 @@
 $(document).ready(function() {
 
-
-  
   //function that changes the background color randomly.
   var colorize = function() {
-    var colors = ['rgb(220, 244, 210)', 'rgb(247, 212, 246)', 'rgb(244, 235, 186)', 'rgb(209, 214, 252)', 'rgb(158, 247, 241)', 'rgb(165, 244, 164)', 'rgb(255, 210, 210)', 'rgb(255, 239, 191)', 'rgb(198, 244, 239)'];
+    var colors = ['#258EA6', '#759FBC', '#90C3C8', '#B9B8D3', '#59A96A', '#9BDEAC', '#B4E7CE', '#AC80A0', '#DCC9B6', '#ABC4AB', '#68C5DB'];
     var number = Math.floor(Math.random() * 10);
     $('body').css('background-color', colors[number]);
+    $('button').css('background-color', colors[number]);
   };
 
-  colorize();
-
-  // getting the first quote with getJSON
-  $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
-    var quoteText = data.quoteText;
-    var quoteAuthor = data.quoteAuthor;
-    $('#quote').text('" ' + quoteText + '"');
-    if (quoteAuthor.length === 0) {
-      $('#author').text('- Anonymous');
-    } else {
-      $('#author').text('- ' + quoteAuthor);
-    }
-
-  });
-
-  // getting a new quote on click
-  $('#newQuoteButton').on('click', function() {
-    // hiding the alert div
-    $('.alert').addClass('hidden');
-    colorize();
+  //function that gets the data from the API, and show on the page
+  var getData = function() {
     $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
       var quoteText = data.quoteText;
       var quoteAuthor = data.quoteAuthor;
+      // inserting the data on the page
       $('#quote').text('" ' + quoteText + '"');
       if (quoteAuthor.length === 0) {
         $('#author').text('- Anonymous');
@@ -39,17 +21,30 @@ $(document).ready(function() {
         $('#author').text('- ' + quoteAuthor);
       }
     });
+  };
+
+  // getting the first background color
+  colorize();
+
+  // getting the first quote with getJSON
+  getData();
+
+  // getting a new quote on click
+  $('#newQuoteButton').on('click', function() {
+    // hiding the alert div
+    $('.alert').addClass('hidden');
+    colorize();
+    getData();
   });
 
   // tweeting the quote on click
   $('#tweetButton').on('click', function(event) {
       var textToTweet = $('#quote').text() + $('#author').text();
       console.log(textToTweet.length);
-      // if tweet is longer than 140 chars, alert sent with materialize toast component.
+      // if tweet is longer than 140 chars, alert sent.
       if (textToTweet.length > 140) {
         event.preventDefault();
-        //Materialize.toast('Your tweet is longer than 140 characters !', 6000);
-        // or alert it on the page in an alert div:
+        // alert it on the page in an alert div:
         $('.alert').removeClass('hidden').html('Your tweet is longer than 140 characters !');
       } else {
       // if it's < 140 chars, tweeting out.

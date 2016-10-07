@@ -4,32 +4,27 @@
   display: none;
 }
 
-/* card position adjustment */
-.row-w-top-padding {
-  padding-top: 70px;
-}
-
+/* quote box CSS */
 .quoteDislay {
   background-color: rgb(248, 248, 248);
   margin: 150px auto;
+  margin-bottom: 15px;
   max-width: 800px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
   padding: 15px 30px 30px 15px;
+  border-radius: 2px;
 }
 
 button {
-    background-color: #2e7d32;
-    color: white;
+    background-color: rgb(248, 248, 248);
     padding: 8px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
     margin-left: 20px;
     margin-right: 20px;
 }
-
-
 
 #quote {
   font-size: 30px;
@@ -43,4 +38,14 @@ button {
   font-style: italic;
   padding-top: 30px;
   font-family: 'Merriweather', serif;
+}
+
+/* alert box CSS */
+.alert {
+  background-color: #ef5350;
+  margin: auto;
+  max-width: 846px;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
