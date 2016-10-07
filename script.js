@@ -10,7 +10,7 @@ $(document).ready(function() {
 
   //function that gets the data from the API, and show on the page
   var getData = function() {
-    $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
+    $.getJSON('https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
       var quoteText = data.quoteText;
       var quoteAuthor = data.quoteAuthor;
       // inserting the data on the page
