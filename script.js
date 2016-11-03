@@ -11,11 +11,15 @@ $(document).ready(function() {
 
   //function that gets the data from the API, and show on the page
   var getData = function() {
+    $('#quote').html('<img src="status.gif">');
+    $('#author').html('');
+    $('.quoteDislay').css('background-color', 'white');
     var quoteURL = "https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?";
     $.getJSON(quoteURL, {
       format: "jsonp"
     })
     .done(function(data) {
+      $('.quoteDislay').css('background-color', 'rgb(248, 248, 248)');
       var quoteText = data.quoteText;
       var quoteAuthor = data.quoteAuthor;
       // inserting the data on the page
@@ -27,8 +31,10 @@ $(document).ready(function() {
       }
       // getting the first background color
       colorize();
+
     });
   };
+
 
 
 
@@ -43,7 +49,7 @@ $(document).ready(function() {
     // hiding the alert div
     $('.alert').addClass('hidden');
     getData();
-  
+
   });
 
   // tweeting the quote on click
