@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
   //function that changes the background color randomly.
   var colorize = function() {
     var colors = ['#258EA6', '#759FBC', '#90C3C8', '#B9B8D3', '#59A96A', '#9BDEAC', '#B4E7CE', '#AC80A0', '#DCC9B6', '#ABC4AB', '#68C5DB'];
@@ -10,7 +11,11 @@ $(document).ready(function() {
 
   //function that gets the data from the API, and show on the page
   var getData = function() {
-    $.getJSON('https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?', function(data) {
+    var quoteURL = "https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?";
+    $.getJSON(quoteURL, {
+      format: "jsonp"
+    })
+    .done(function(data) {
       var quoteText = data.quoteText;
       var quoteAuthor = data.quoteAuthor;
       // inserting the data on the page
@@ -20,21 +25,25 @@ $(document).ready(function() {
       } else {
         $('#author').text('- ' + quoteAuthor);
       }
+      // getting the first background color
+      colorize();
     });
   };
 
-  // getting the first background color
-  colorize();
+
 
   // getting the first quote with getJSON
   getData();
+
+
+
 
   // getting a new quote on click
   $('#newQuoteButton').on('click', function() {
     // hiding the alert div
     $('.alert').addClass('hidden');
-    colorize();
     getData();
+  
   });
 
   // tweeting the quote on click
