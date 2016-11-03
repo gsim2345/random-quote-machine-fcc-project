@@ -11,7 +11,7 @@ $(document).ready(function() {
 
   //function that gets the data from the API, and show on the page
   var getData = function() {
-    $('#quote').html('<img src="status.gif">');
+    $('#quote').html('<img src="status.gif" alt="preloader gif">');
     $('#author').html('');
     $('.quoteDislay').css('background-color', 'white');
     var quoteURL = "https://crossorigin.me/http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?";

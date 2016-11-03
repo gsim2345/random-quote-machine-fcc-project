@@ -23,15 +23,26 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 50px;
+    margin-right: 25px;
 }
+
+button a i {
+  padding-right: 16px;
+}
+
+
 
 #quote {
   font-size: 30px;
   text-indent: 50px;
   padding-top: 20px;
   font-family: 'Merriweather', serif;
+}
+
+#quote img {
+  text-align: center;
+  margin-right: 40px;
 }
 
 #author {
