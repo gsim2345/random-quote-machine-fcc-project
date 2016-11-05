@@ -12,14 +12,20 @@ $(document).ready(function() {
     $('#quote').html('<img src="status.gif" alt="preloader gif">');
     $('#author').html('');
     $('.quoteDislay').css('background-color', 'white');
-    var quoteURL = "http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?";
-    $.getJSON(quoteURL, {
-      format: "jsonp"
+    var quoteURL = "https://andruxnet-random-famous-quotes.p.mashape.com/cat=famous";
+    $.ajax(quoteURL, {
+      format: "json",
+      dataType: 'json',
+      headers: {
+       'X-Mashape-Key': 'b0DsW1320PmshFs2hPsFt0YTel9Hp1zVzqYjsnlGiKZMsnAqM2'
+      },
+      method: "POST"
     })
     .done(function(data) {
+      console.log(data.quote);
       $('.quoteDislay').css('background-color', 'rgb(248, 248, 248)');
-      var quoteText = data.quoteText;
-      var quoteAuthor = data.quoteAuthor;
+      var quoteText = data.quote;
+      var quoteAuthor = data.author;
       /** inserting the data on the page */
       $('#quote').text('" ' + quoteText + '"');
       if (quoteAuthor.length === 0) {
