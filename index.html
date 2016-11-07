@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,36 +10,39 @@
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
     <!-- link to CSS file -->
-    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="style.css" rel="stylesheet" type="text/css" />
 
-  </head>
-  <body>
+</head>
+
+<body>
 
 
     <div class="container">
         <!-- div displaying the quotes-->
-      <div class="quoteDislay" align="center">
+        <div class="quoteDislay" align="center">
 
-        <p id="quote"></p>
-        <div>
-          <p id="author"></p>
+            <p id="quote"></p>
+            <div>
+                <p id="author"></p>
+            </div>
+            <div class="buttons">
+                <button><a id="tweetButton" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>   Tweet</a></button>
+                <button id="newQuoteButton" type="button">New Quote</button>
+            </div>
         </div>
-        <div class="buttons">
-          <button><a id="tweetButton" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i>   Tweet</a></button>
-          <button id="newQuoteButton" type="button">New Quote</button>
-        </div>
-      </div>
         <!-- div displaying the alert -->
-      <div class="hidden alert" align="center"></div>
-      <div class="push"></div>
+        <div class="hidden alert" align="center"></div>
+        <div class="push"></div>
     </div>
-    <footer class="footer">Gabriella Simon - 2016  -  Quotes are courtesy of <a href="https://market.mashape.com/andruxnet/random-famous-quotes" target="_blank">mashape.com</a></footer>
+
+    <footer class="footer">Gabriella Simon - 2016 - Quotes are courtesy of <a href="https://market.mashape.com/andruxnet/random-famous-quotes" target="_blank">mashape.com</a></footer>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <!-- Fontawesome -->
     <script src="https://use.fontawesome.com/31e4b5bbb7.js"></script>
     <!-- link to js file -->
-      <script src="script.js"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
+
 </html>
