@@ -7,7 +7,7 @@ $(document).ready(function() {
     $('body').css('background-color', colors[number]);
     $('button').css('background-color', colors[number]);
   };
-  /** function that gets the data from the API, and show on the page */
+  /** function that gets the data from the API, and displays it on the page */
   var getData = function() {
     $('#quote').html('<img src="status.gif" alt="preloader gif">');
     $('#author').html('');
@@ -33,40 +33,38 @@ $(document).ready(function() {
       } else {
         $('#author').text('- ' + quoteAuthor);
       }
-      // getting the first background color
+      /** getting the background color */
       colorize();
-
+    })
+    .fail(function(error) {
+      $('#quote').text('Error occured. Not getting any quotes from the source.');
     });
   };
 
-
-
-
-  // getting the first quote with getJSON
+  /** getting the first quote with the getData function */
   getData();
 
 
 
-
-  // getting a new quote on click
+  /** getting a new quote on click */
   $('#newQuoteButton').on('click', function() {
-    // hiding the alert div
+    /** hiding the alert div, in case it was used earlier because of long tweet */
     $('.alert').addClass('hidden');
     getData();
 
   });
 
-  // tweeting the quote on click
+  /** tweeting the quote on click */
   $('#tweetButton').on('click', function(event) {
       var textToTweet = $('#quote').text() + $('#author').text();
       console.log(textToTweet.length);
-      // if tweet is longer than 140 chars, alert sent.
+      /** if tweet is longer than 140 chars, alert sent. */
       if (textToTweet.length > 140) {
         event.preventDefault();
-        // alert it on the page in an alert div:
+        /** alert it on the page in an alert div. */
         $('.alert').removeClass('hidden').html('Your tweet is longer than 140 characters !');
       } else {
-      // if it's < 140 chars, tweeting out.
+        /** if quote'length is  < 140 chars, tweeting out. */
         $('#tweetButton').attr('href', 'https://twitter.com/intent/tweet?text=' + textToTweet + '');
       }
 
